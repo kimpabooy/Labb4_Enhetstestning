@@ -4,7 +4,7 @@
 - Filnamn: LibrarySystem.cs
 - Metod: AddBook
 - Rad: 21
-- Problem: Man kunde lägga till en bok utan att ange ett ISBN-Nummer.
+- Problem: You could add a new book without ISBN-number.
 - Lösning:
   `
   if (book.ISBN == null || book.ISBN.Length < 13)
@@ -13,12 +13,17 @@
 }
   `
 ---
-**Titel**
-- Filnamn:
-- Metod:
-- Rad: 
-- Problem:
-- Lösning:
+**Lägga till böcker**
+- Filnamn: LibrarySystem.cs
+- Metod: AddBook
+- Rad: 21
+- Problem: You could add a new book with a ISBN-number that already excisted.
+- Lösning: added `books.Any(b => b.ISBN == book.ISBN)`
+-   to
+-   ` if (book.ISBN == null || book.ISBN.Length < 13)
+{ 
+    return false;
+}`
 ---
 
 **Titel**

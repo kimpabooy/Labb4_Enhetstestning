@@ -16,15 +16,23 @@ namespace System.Test
 
         }
 
+
         [TestMethod]
-        public void AddBook_ShouldNotAddBookIfISBNNumberExcists_ReturnFalse()
+        public void AddBook_ShouldNotAddBookIfISBNNumberExists_ReturnFalse()
         {
             var system = new LibrarySystem();
-            var book = new Book("New Book", "Author", "9780060850524", 2020);
-            bool result = system.AddBook(book);
+            var newISBN = "9780399501487"; // existing ISBN
+            //var newISBN = "2222222222222"; // new ISBN
 
-            Assert.AreEqual(book, system.SearchByISBN("9780060850524"));
+            var newBook = new Book("New Book", "Author", newISBN, 2020);
+            bool result = system.AddBook(newBook);
 
+            var foundBook = system.SearchByISBN(newISBN);
+
+            Assert.AreNotEqual(newBook, foundBook); // The book sould not be replaced if found.
+            Assert.IsFalse(result); // AddBook should return false if the book already exists.
         }
+
+
     }
 }

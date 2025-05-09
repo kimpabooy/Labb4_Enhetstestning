@@ -20,7 +20,7 @@
 
         public bool AddBook(Book book)
         {
-            if (book.ISBN == null || book.ISBN.Length < 13)
+            if (book.ISBN == null || book.ISBN.Length < 13 || books.Any(b => b.ISBN == book.ISBN))
             {
                 return false;
             }

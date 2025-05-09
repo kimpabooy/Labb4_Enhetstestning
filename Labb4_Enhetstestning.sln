@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labb4_Enhetstestning", "Labb4_Enhetstestning\Labb4_Enhetstestning.csproj", "{03DF4355-485D-40DF-8D84-EF7B4C3FA080}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Test", "System.Test\System.Test.csproj", "{10070222-EDDF-483C-9674-DAFC151CE52D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03DF4355-485D-40DF-8D84-EF7B4C3FA080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03DF4355-485D-40DF-8D84-EF7B4C3FA080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03DF4355-485D-40DF-8D84-EF7B4C3FA080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03DF4355-485D-40DF-8D84-EF7B4C3FA080}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10070222-EDDF-483C-9674-DAFC151CE52D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10070222-EDDF-483C-9674-DAFC151CE52D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10070222-EDDF-483C-9674-DAFC151CE52D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10070222-EDDF-483C-9674-DAFC151CE52D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7DB7C67C-883B-44E8-991B-C9D8EF578024}
+	EndGlobalSection
+EndGlobal

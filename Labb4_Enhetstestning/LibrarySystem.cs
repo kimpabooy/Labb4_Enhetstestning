@@ -20,6 +20,11 @@
 
         public bool AddBook(Book book)
         {
+            if (book.ISBN == null || book.ISBN.Length < 13)
+            {
+                return false;
+            }
+
             books.Add(book);
             return true;
         }

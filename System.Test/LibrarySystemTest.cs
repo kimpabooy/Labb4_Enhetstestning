@@ -6,13 +6,13 @@ namespace System.Test
     public sealed class LibrarySystemTest
     {
         [TestMethod]
-        public void AddBook_ShouldAddBookIfISBNNumberIsUnique_ReturnTrue()
+        public void AddBook_ShouldAddBookMustHavISBN_ReturnTrue()
         {
             var system = new LibrarySystem();
-            var book = new Book("New Book", "Author", "1234567890", 2020);
+            var book = new Book("New Book", "Author", "", 2020);
             bool result = system.AddBook(book);
 
-            Assert.AreEqual(book, system.SearchByISBN("1234567890"));
+            Assert.IsTrue(result);
 
         }
 

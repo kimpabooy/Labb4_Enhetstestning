@@ -26,28 +26,42 @@
 }`
 ---
 
-**Titel**
-- Filnamn:
-- Metod:
-- Rad: 
-- Problem:
-- Lösning:
+**Sökning**
+- Filnamn: LibrarySystem.cs
+- Metod: SearchByISBN
+- Rad: 45
+- Problem: There was no null handling
+- Lösning: Added
+`if (string.IsNullOrEmpty(title))
+{
+    return null;
+}`
+
 ---
 
-**Titel**
-- Filnamn:
-- Metod:
-- Rad: 
-- Problem:
-- Lösning:
+**Sökning**
+- Filnamn: LibrarySystem.cs
+- Metod: SearchByTitle
+- Rad: 50
+- Problem: There was no null handling
+- Lösning: Added
+`if (string.IsNullOrEmpty(title))
+{
+    return new List<Book>();
+}`
+
 ---
 
-**Titel**
-- Filnamn:
-- Metod:
-- Rad: 
-- Problem:
-- Lösning:
+**Sökning**
+- Filnamn: LibrarySystem.cs
+- Metod: SearchByAuthor
+- Rad: 65
+- Problem: There was no null handling
+- Lösning: Added
+`if (string.IsNullOrEmpty(author))
+{
+    return new List<Book>();
+}`
 ---
 
 **Titel**

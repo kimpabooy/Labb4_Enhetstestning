@@ -20,33 +20,55 @@
 
         public bool AddBook(Book book)
         {
+            if (book.ISBN == null || book.ISBN.Length < 13 || books.Any(b => b.ISBN == book.ISBN))
+            {
+                return false;
+            }
+
             books.Add(book);
             return true;
         }
 
         public bool RemoveBook(string isbn)
         {
-            Book book = SearchByISBN(isbn);
-            if (book != null)
+            //Book book = SearchByISBN(isbn);
+
+            var book = books.FirstOrDefault(b => b.ISBN == isbn);
+            if (book == null || book.IsBorrowed)
             {
+                return false;
+            }
                 books.Remove(book);
                 return true;
-            }
-            return false;
         }
 
         public Book SearchByISBN(string isbn)
         {
-            return books.FirstOrDefault(b => b.ISBN == isbn);
+            if (string.IsNullOrEmpty(isbn))
+            {
+                return null;
+            }
+
+            return books.FirstOrDefault(b => b.ISBN.StartsWith(isbn));
         }
 
         public List<Book> SearchByTitle(string title)
         {
-            return books.Where(b => b.Title == title).ToList();
+            if (string.IsNullOrEmpty(title))
+            {
+                return new List<Book>();
+            }
+                
+            return books.Where(b => b.Title.Contains(title, StringComparison.OrdinalIgnoreCase)).ToList();
         }
 
         public List<Book> SearchByAuthor(string author)
         {
+            if (string.IsNullOrEmpty(author))
+            {
+                return new List<Book>();
+            }
+
             return books.Where(b => b.Author.Contains(author, StringComparison.OrdinalIgnoreCase)).ToList();
         }
 
@@ -68,6 +90,7 @@
             if (book != null && book.IsBorrowed)
             {
                 book.IsBorrowed = false;
+                book.BorrowDate = null;
                 return true;
             }
             return false;
@@ -80,7 +103,7 @@
 
         public decimal CalculateLateFee(string isbn, int daysLate)
         {
-            if (daysLate <= 0)
+            if (daysLate == null || daysLate <= 0)
                 return 0;
 
             Book book = SearchByISBN(isbn);
@@ -88,7 +111,7 @@
                 return 0;
 
             decimal feePerDay = 0.5m;
-            return daysLate + feePerDay;
+            return daysLate * feePerDay;
         }
 
         public bool IsBookOverdue(string isbn, int loanPeriodDays)

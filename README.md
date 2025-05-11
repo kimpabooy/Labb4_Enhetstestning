@@ -64,6 +64,62 @@
 }`
 ---
 
+**Återlämning**
+- Filnamn: LibrarySystem.cs
+- Metod: ReturnBook
+- Rad: 87
+- Problem: Returning a book did not reset the date correctly
+- Lösning: Added `book.BorrowDate = null;`
+---
+
+**Titel**
+- Filnamn:
+- Metod:
+- Rad: 
+- Problem:
+- Lösning:
+---
+
+**Titel**
+- Filnamn:
+- Metod:
+- Rad: 
+- Problem:
+- Lösning:
+---
+
+**Titel**
+- Filnamn:
+- Metod:
+- Rad: 
+- Problem:
+- Lösning:
+---
+
+**Titel**
+- Filnamn:
+- Metod:
+- Rad: 
+- Problem:
+- Lösning:
+---
+
+**Titel**
+- Filnamn:
+- Metod:
+- Rad: 
+- Problem:
+- Lösning:
+---
+
+**Titel**
+- Filnamn:
+- Metod:
+- Rad: 
+- Problem:
+- Lösning:
+---
+
 **Titel**
 - Filnamn:
 - Metod:

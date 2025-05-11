@@ -72,12 +72,12 @@
 - Lösning: Added `book.BorrowDate = null;`
 ---
 
-**Titel**
-- Filnamn:
-- Metod:
-- Rad: 
-- Problem:
-- Lösning:
+**Förseningshantering**
+- Filnamn: LibrarySystem.cs
+- Metod: CalculateLateFee
+- Rad: 104(114)
+- Problem: Returned (days + fee) when i should be (days * fee)
+- Lösning: Changed `return daysLate + feePerDay;` to `return daysLate * feePerDay;`
 ---
 
 **Titel**

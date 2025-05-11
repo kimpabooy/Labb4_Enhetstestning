@@ -30,6 +30,16 @@
 - Filnamn: LibrarySystem.cs
 - Metod: SearchByISBN
 - Rad: 45
+- Problem: Could not search for partial matching SIBN-number
+- Lösning: Changed 
+`return books.FirstOrDefault(b => b.ISBN == isbn);` to `return books.FirstOrDefault(b => b.ISBN.StartsWith(isbn));`
+
+---
+
+**Sökning**
+- Filnamn: LibrarySystem.cs
+- Metod: SearchByISBN
+- Rad: 45
 - Problem: There was no null handling
 - Lösning: Added
 `if (string.IsNullOrEmpty(title))
@@ -75,17 +85,17 @@
 **Förseningshantering**
 - Filnamn: LibrarySystem.cs
 - Metod: CalculateLateFee
-- Rad: 104(114)
+- Rad: 104
 - Problem: Returned (days + fee) when i should be (days * fee)
 - Lösning: Changed `return daysLate + feePerDay;` to `return daysLate * feePerDay;`
 ---
 
-**Titel**
-- Filnamn:
-- Metod:
-- Rad: 
-- Problem:
-- Lösning:
+**Förseningshantering**
+- Filnamn: LibrarySystem.cs
+- Metod: CalculateLateFee
+- Rad: 104
+- Problem: Method didn´t had null check for daysLate
+- Lösning: Added `daysLate == null`
 ---
 
 **Titel**

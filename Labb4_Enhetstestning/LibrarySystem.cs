@@ -49,7 +49,7 @@
                 return null;
             }
 
-            return books.FirstOrDefault(b => b.ISBN == isbn);
+            return books.FirstOrDefault(b => b.ISBN.StartsWith(isbn));
         }
 
         public List<Book> SearchByTitle(string title)
